@@ -1,0 +1,16 @@
+{
+    "notionApiKey": {
+      "display_name": "Notion API Key",
+      "description": "Please enter your Notion integration API key.",
+      "type": "text",
+      "required": true,
+      "secure": true
+    },
+    "notionDatabaseId": {
+      "display_name": "Notion Database ID",
+      "description": "Please enter the ID of the Notion database where you want to store survey responses.",
+      "type": "text",
+      "required": true
+    }
+  }
+  
