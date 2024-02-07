@@ -1,15 +1,28 @@
 require('dotenv').config();
 const express = require('express');
 const { Client } = require('@notionhq/client');
+const path = require('path');
 
 // Initialize the Notion client with the integration token
 const notion = new Client({
   auth: process.env.NOTION_API_KEY,
 });
-
-// Initialize Express
 const app = express();
-app.use(express.json()); // Middleware to parse JSON bodies
+app.use(express.json());
+
+app.use(express.static(path.join(__dirname, 'app')));
+
+// app.use(express.static('app'));
+
+// app.use('/style', express.static(path.join(__dirname, 'styles')));
+// app.use('/scripts', express.static(path.join(__dirname, 'scripts')));
+// app.use('/images', express.static(path.join(__dirname, 'images')));
+
+
+app.get('/', (req, res) => {
+  // Adjust the path to go up one directory level to find index.html
+  res.sendFile(path.join(__dirname, '../index.html'));
+});
 
 const databaseId = process.env.NOTION_DATABASE_ID;
 
