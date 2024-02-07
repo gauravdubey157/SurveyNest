@@ -1,26 +1,93 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-  <title>SurveySparrow Notion Integration</title>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="./styles/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SurveyNest</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            margin: 0;
+            padding: 40px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 80px);
+            color: #333;
+        }
+        .container {
+            background: white;
+            padding: 25px 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            position: relative; /* For shadow and layering */
+            z-index: 2; /* Ensures content is above background effects */
+        }
+        h1 {
+            color: #273c75;
+            margin-bottom: 24px;
+        }
+        .buttons {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        button {
+            background-color: #8c7ae6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        button:hover {
+            background-color: #716f88;
+            transform: translateY(-2px);
+        }
+        .about {
+            margin-top: 30px;
+            color: #4b4b4b;
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: left;
+            border-top: 2px solid #eaeef3;
+            padding-top: 20px;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+                height: auto;
+            }
+            .container {
+                padding: 20px;
+            }
+            .buttons {
+                flex-direction: column;
+            }
+            button {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <div class="container">
-    <header>
-        <h1>SurveySparrow to Notion</h1>
-    </header>
-    <main>
-        <p>Welcome to the SurveySparrow to Notion integration app. This service runs in the background, listening for survey completions and automatically updating a Notion database with the responses.</p>
-    </main>
-  </div>
+    <div class="container">
+        <h1>Welcome to SurveyNest</h1>
+        <div class="buttons">
+            <button onclick="location.href='https://www.notion.so/'">Notion</button>
+            <button onclick="location.href='https://surveysparrow.com/'">SurveySparrow</button>
+        </div>
+        <div class="about">
+            <p>SurveyNest elegantly automates the integration of SurveySparrow responses into your Notion database. It's the ultimate tool for seamless, real-time data transfer designed to elevate productivity and streamline analysis by eliminating manual data handling. With SurveyNest, tap into the power of instant data organization and unlock the full potential of your survey insights.</p>
+        </div>
+    </div>
 </body>
-<script async src="https://ssdk.surveysparrow.dev/ssdk/2.0/assets/survey_client.js"></script>
-<script defer src="./scripts/app.js"></script>
-
 </html>
