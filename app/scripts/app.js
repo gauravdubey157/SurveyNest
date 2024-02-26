@@ -18,7 +18,6 @@ app.use(express.static(path.join(__dirname, 'app')));
 // app.use('/scripts', express.static(path.join(__dirname, 'scripts')));
 // app.use('/images', express.static(path.join(__dirname, 'images')));
 
-
 app.get('/', (req, res) => {
   // Adjust the path to go up one directory level to find index.html
   res.sendFile(path.join(__dirname, '../index.html'));
